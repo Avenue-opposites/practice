@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 10px;
+}
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #ffefba, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text {
+    font-size: 6rem;
+    font-family: monospace,sans-serif;
+    position: relative;
+}
+.text::after {
+    content: "";
+    position: absolute;
+    top: 0.2rem;
+    right: -1rem;
+    height: 80%;
+    width: 0.5rem;
+    background-color: #000;
+    animation: twinkle 1.1s 1s steps(2,jump-none) infinite;
+}
+.anima {
+    width: 0ch;
+    text-align: center;
+    display: inline-block;
+    overflow: hidden;
+    animation: move 0.1s forwards;
+    animation-delay:var(--delay) ;
+}
+@keyframes move {
+    to {
+        width: 1ch;
+    }
+}
+@keyframes twinkle {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

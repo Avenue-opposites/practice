@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: aquamarine;
+            display: grid;
+            grid-template-rows: repeat(6,200px);
+            /* grid-template-columns: repeat(3,auto-fill); */
+            grid-row-gap: 20px;
+            grid-column-gap: 20px;
+            grid-template-columns: repeat(5,200px);
+            /* grid-template-areas: 'a b c','d e f','h i j'; */
+            /* grid-auto-flow: column dense; */
+            /* place-items: end end; */
+            justify-content: center;
+            /* align-content: space-around; */
+        }
+        .container.item:hover {
+            background-color: greenyellow;
+        }
+        .item {
+            border-radius: 10px;
+            transition: all 0.5s;
+            /* width: 200px;
+            height: 200px; */
+            background: greenyellow;
+            font-size: 10em;
+            font-weight: 300;
+            font-family: 'Courier New', Courier, monospace;
+            /* transform: rotate(45deg); */
+        }
+        .item:hover {
+            background-color: aqua;
+        }
+        .item:nth-child(1) {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            
+        }
+        .item:nth-child(4) {
+            grid-column-start: 2;
+            grid-column-end: 6;
+
+        }
+        .item:nth-child(5) {
+            grid-column-start: 1;
+            grid-column-end: 4;
+
+        }
+        .item:nth-child(9) {
+            grid-row-start:4;
+            grid-row-end: 6;
+        }
+        .item:nth-child(10) {
+            grid-column-start: 3;
+            grid-column-end: 6;
+        }
+        .item:nth-child(11) {
+            grid-column-start:2;
+            grid-column-end: 6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+    </div>
+</body>
+<!-- <script>
+    let num = 0;
+    const items = document.querySelectorAll('.item');
+    items.forEach((value) => {
+        // const widths = parseInt(getComputedStyle(value,null).width) ;
+        // num += 30;
+        // value.style.width = widths + num + 'px';
+        // console.log(value.addEventListener);
+        value.addEventListener("click",() => {
+            value.style.backgroundColor = 'red';
+            setTimeout(() => {
+                value.style.backgroundColor = 'greenyellow';
+            },500);
+        });
+    });
+</script> -->
+</html>

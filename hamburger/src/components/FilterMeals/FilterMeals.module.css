@@ -1,0 +1,43 @@
+.basic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120rem;
+    border-bottom: 1px solid #f2f2f2 ;
+}
+.basic label {
+    width: calc(750rem*0.8);
+    height: calc(120rem * 0.5);
+    position: relative;
+}
+.basic label span {
+    position: absolute;
+    top: 10rem;
+    left: 10rem;
+    background: url(../../assets/image/search.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 40rem;
+    height: 40rem;
+}
+.basic label input {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20rem;
+    padding-left: 50rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(190, 189, 189);
+    transition: background-color .3s linear;
+}
+
+.basic input:focus {
+    outline: none;
+    background-color: rgb(215, 214, 214);
+}
+.basic input::placeholder {
+    font-size: 20rem;
+}

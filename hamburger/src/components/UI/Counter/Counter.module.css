@@ -1,0 +1,34 @@
+.basic {
+    display: inline-flex;
+    align-items: center;
+}
+.increment,
+.decrement {
+    outline: none;
+    border-radius: 50%;
+    font-size: 30rem;
+    width: 30rem;
+    height: 30rem;
+    border: none;
+    text-align: center;
+}
+.increment {
+    background: url(../../../assets/image/increment.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20rem;
+    background-color: orange;
+}
+.decrement {
+    background: url(../../../assets/image/decrement.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 15rem;
+    border: 1px solid gray;
+    color: gray;
+}
+.amount {
+    outline: none;
+    margin: 0 4px;
+    font-size: 30rem;
+}

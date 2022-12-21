@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            /* box-sizing: border-box; */
+        }
+        :root {
+            --body:linear-gradient(to right, #606c88, #3f4c6b);
+        }
+        body {
+            background: var(--body);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+        .container {
+            height: 600px;
+            width: 1400px;
+            display: flex;
+            flex-wrap: wrap;
+            /* margin: 100px auto; */
+        }
+        .main {
+            width: 1400px;
+            height: 100%;
+            display: flex;
+        }
+        .top-nav {
+            max-width: 100%;
+            width: 100%;
+            height: 50px;
+            /* background: #00c3ff; */
+            display: flex;
+            justify-content: flex-end;
+        }
+        .top-nav>ul {
+            display: flex;
+            width: 600px;
+            height: 100%;
+            justify-content: space-evenly;
+            line-height: 50px;
+            font-size: 20px;
+
+        }
+        .top-nav>ul li a {
+            color: white;
+            display: inline-block;
+            transition: all 0.3s ease-in;
+        }
+        .top-nav>ul li a:hover {
+            /* color: #000; */
+            transform: translateY(-5px) scale(1.2);
+        }
+        .top-nav>ul li:nth-child(1) a:hover {
+            /* color: #000; */
+            text-shadow: 2px 1px 3px  #c25656;
+        }
+        .top-nav>ul li:nth-child(2) a:hover {
+            text-shadow: 2px 1px 3px  #23bd82;
+        }
+        .top-nav>ul li:nth-child(3) a:hover {
+            text-shadow: 2px 1px 3px  #0e95a7;
+        }
+        .top-nav>ul li:nth-child(4) a:hover {
+            text-shadow: 2px 1px 3px  #d48cb9;
+        }
+        h1 {
+            width: 600px;
+            height: 90%;
+            box-sizing: border-box;
+            display: inline-block;
+            /* background-color: antiquewhite; */
+            padding: 30px;
+            color: #fff;
+            /* margin: 0; */
+        }
+        .picture-container {
+            /* position: relative; */
+            display: inline-block;
+            width: 800px;
+            height: 90%;
+            background-color: aquamarine;
+        }
+        .hide-container {
+            width: 500px;
+            height: 50px;
+            /* background-color: red; */
+            /* display: flex; */
+            /* flex-wrap: nowrap; */
+            overflow: hidden;
+            margin: 0 auto;
+            padding: 20px  0;
+            position: relative;
+        }
+        .item {
+            display: block;
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 50px;
+            /* text-align: center; */
+            /* color: rgb(231, 235, 18); */
+            position: absolute;
+            transform: translateX(-500px);
+        }
+        .item:nth-child(1) {
+            background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .item:nth-child(2) {
+            background: linear-gradient(to right, #ff0099, #493240);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .item:nth-child(3) {
+            background: linear-gradient(to left, #a80077, #66ff00);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .item:nth-child(4) {
+            background: linear-gradient(to right, #00c3ff, #ffff1c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .item:nth-child(5) {
+            background: linear-gradient(to right, #c31432, #da7373);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .item:nth-child(6) {
+            background: linear-gradient(to right, #e65c00, #f9d423);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .item:nth-child(7) {
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .item:nth-child(8) {
+            background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .titles {
+            display: block;
+            font-size: 50px;
+            font-weight: 700;
+            font-family: Georgia, 'Times New Roman', Times, sans-serif;
+            letter-spacing: 0.12em;
+            margin-top: 20px;
+            text-shadow: 6px 2px 6px  #ce3217;
+        }
+        .titles:last-child {
+            margin-top: 0;
+        }
+        .item[show] {
+            animation: move 0.5s forwards ease-in-out;
+        }
+        @keyframes move {
+            70% {
+                transform: translateX(10px);
+            }
+            80% {
+                transform: translateX(0);
+            }
+            90% {
+                transform: translateX(5px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+            
+            /* 100% {
+                transform: translateX(-500px);
+            } */
+            }
+            .item[back] {
+                transform: translateX(500px);
+                transition: all 0.3s ease-in;
+            }
+            .up-container {
+                width: 100%;
+                height: 400px;
+                background-color: #23bd82;
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .LingJi-img-container {
+                position: relative;
+                width: 275px;
+                height: 100%;
+                background-color: red;
+                box-sizing: border-box;
+                overflow: hidden;
+                margin-left: 10px;
+            }
+            .LingJi-img-container>a {
+                display: block;
+                width: calc(275*4px);
+                height: 100%;
+                /* transform: translateX(-275px); */
+                display: inline-flex;
+            }
+            .LingJi-img-container>a>span {
+                background-repeat: no-repeat;
+                background-size:cover ;
+                background-position: center center;
+                display: inline-block;
+                width: 275px;
+                height: 100%;
+                /* position: relative; */
+                margin-left: 0;
+            }
+            .LingJi-img-container>a>span:nth-child(1) {
+                background-image: url(/图片库/FGO/C呆/C呆零破.jpg);
+            }
+            .LingJi-img-container>a>span:nth-child(2) {
+                background-image: url(/图片库/FGO/C呆/C呆二破.jpg);
+            }
+            .LingJi-img-container>a>span:nth-child(3) {
+                background-image: url(/图片库/FGO/C呆/C呆三破.jpg);
+            }
+            .LingJi-img-container>a>span:nth-child(4) {
+                background-image: url(/图片库/FGO/C呆/C呆满破.jpg);
+            }
+            .border-container {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 9999;
+            }
+            .background-img {
+                background-repeat: no-repeat;
+            }
+            .border-container>span>img {
+                max-width: 100%;
+                height: auto;
+                max-height: 100%;
+            }
+            .left-frame>img {
+                position: absolute;
+                left: 0;
+            }
+            .right-frame>img {
+                position: absolute;
+                right: 0;
+            }
+            .bottom-frame>img {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+            .outplacement>img {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: auto;
+            }
+            .rarity>img {
+                position: absolute;
+                transform: translateX(-50%);
+                top: 0;
+                left: 50%;
+                width: 120px;
+                height: auto;
+            }
+            .C呆-name {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 300px;
+                height: auto;
+            }
+            .border-container>p {
+                position: absolute;
+                bottom: 35px;
+                width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .border-container>p>span {
+                position: absolute;
+                display: inline-block;
+                font-family: 'Times New Roman';
+                font-weight: bold;
+                background: linear-gradient(to bottom, #fdfdfd 50%, #5e5e5e);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 25px;
+            }
+            .border-container>p>span:nth-child(1) {
+                left: 15%;
+
+            }
+            .border-container>p>span:nth-child(2) {
+                right: 15%;
+            }
+            .pre-c>img,
+            .next-c>img {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .pre-c>img {
+                width: 15%;
+                height: auto;
+                left: 5%;
+            }
+            .next-c>img {
+                width: 15%;
+                height: auto;
+                right: 5%;
+            }
+            .content-block {
+                display: inline-flex;
+                width: 500px;
+                height: 100%;
+                /* background-color: red; */
+                overflow: hidden;
+            }
+            .skill-block {
+                position: relative;
+                box-sizing: border-box;
+                padding: 20px;
+                /* float: left; */
+                /* display: inline-block; */
+                width: 166px;
+                height: 100%;
+                transition: all 0.3s;
+                /* box-shadow: 0px 0px 5px 5px #000 inherit ; */
+                /* background-color: #0e95a7; */
+                /* transform: skew(-15deg,0deg); */
+            }
+            .skill-block:nth-child(1) {
+                background: #f12711;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #f5af19, #ff1900);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(135deg, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            }
+            .skill-block:nth-child(2) {
+                background: #FDC830;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(135deg, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            }
+            .skill-block:nth-child(3) {
+                background: #2980B9;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(135deg, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            }
+            /* .skill-block>p,
+            .skill-block>h3 {
+                transition: all 0.5s ease;
+            } */
+            /* .skill-block>span {
+                display: block;
+                margin: 0 auto;
+            } */
+            .skill-block>span>img {
+                display: block;
+                margin: 0 auto;
+                /* position: absolute;
+                left: 50%;
+                top: 30%;
+                transform: translateX(-50%); */
+                max-width: 100%;
+                width: 75px;
+                height: auto;
+            }
+            .skill-block:hover {
+                width: 100%;
+            }
+            .skill-block:hover>p {
+                opacity: 1;
+            } 
+            .skill-block>p {
+                font-size: 10px;
+                text-align: center;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                transition: all 0.5s ease;
+                opacity: 0;
+            }
+            .skill-block>h3 {
+                margin: 20px auto;
+                font-size: 20px;
+                text-align: center;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-nav">
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">SERVANTS</a></li>
+                <li><a href="">ADD</a></li>
+                <li><a href="">CONTACT US</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <h1>
+                <span class="titles">
+                    What
+                </span>
+                <span class="titles">
+                    do you want
+                </span> 
+                <div class="hide-container">
+                    <span show class="item">アルトリア・キャスター(Caster)</span>
+                    <span class="item">殺生院キアラ(MoonCancer)</span>
+                    <span class="item">蘆屋道満(Alterego)</span>
+                    <span class="item">ヴァン・ゴッホ(Foreigner)</span>
+                    <span class="item">千子村正(Saber)</span>
+                    <span class="item">超人オリオン(Archer)</span>
+                    <span class="item">スペース・イシュタル(Avenger)</span>
+                    <span class="item">平景清(Avenger)</span>
+                </div>
+                <span class="titles">
+                    It's all here.
+                </span>
+            </h1>
+            <div class="picture-container">
+                <div class="up-container">
+                    <div class="LingJi-img-container">
+                        <div class="border-container">
+                            <span class="top-frame background-img ">
+                                <img src="\图片库\FGO\top框.png" alt="">
+                            </span>
+                            <span class="bottom-frame background-img">
+                                <img src="\图片库\FGO\bottom框.png" alt="">
+                            </span>
+                            <span class="left-frame background-img">
+                                <img src="\图片库\FGO\left框.png" alt="">
+                            </span>
+                            <span class="right-frame background-img">
+                                <img src="\图片库\FGO\right框.png" alt="">
+                            </span>
+                            <span class="outplacement background-img">
+                                <img src="\图片库\FGO\职介\Caster.png" alt="">
+                            </span>
+                            <span class="rarity background-img">
+                                <img src="\图片库\FGO\五星.png" alt="">
+                            </span>
+                            <span class="C呆-name background-img">
+                                <img src="\图片库\FGO\C呆\名称.png" alt="">
+                            </span>
+                            <p>
+                                <span>1629</span>
+                                <span>2112</span>
+                            </p>
+                            <span class="pre-c">
+                                <img src="\图片库\FGO\pre_btn.png" alt="">
+                            </span>
+                            <span class="next-c">
+                                <img src="\图片库\FGO\next_btn.png" alt="">
+                            </span>
+                        </div>
+                        <a style="position: absolute; left: 0; top: 0;" href="">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="content-block">
+                        <div class="skill-block">
+                            <span>
+                                <img src="\图片库\FGO\C呆\技能\希望的领导力.png" alt="">
+                            </span>
+                            <h3>希望的领导力</h3>
+                            <p>
+                                己方全体的攻击力提升（3回合）
+                                <br>
+                                NP增加
+                            </p>
+                        </div>
+                        <div class="skill-block"></div>
+                        <div class="skill-block"></div>
+                    </div>
+    
+                </div>
+                
+            </div>
+        </div>
+        
+
+    </div>
+</body>
+<script>
+    window.onload = main();
+    function main() {
+        // console.log(hide.children)
+        let time;
+        time =  setInterval(function() {
+            const hide = document.querySelector('.hide-container');
+            const show = document.querySelector('.item[show]');
+            const next = show.nextElementSibling || hide.children[0];
+            const back = document.querySelector('.item[back]');
+            if(back) {
+                back.removeAttribute('back','');
+            }
+            show.removeAttribute('show','');
+            show.setAttribute('back','');
+            next.setAttribute('show','');
+        },5000);
+        const items = document.querySelectorAll('.item');
+        items.forEach(function(value,index,_this) {
+            // console.log(value);
+            value.addEventListener('mouseover',function() {
+                clearInterval(time);
+            },false);
+            value.addEventListener('mouseout',function() {
+                time =  setInterval(function() {
+                    const hide = document.querySelector('.hide-container');
+                    const show = document.querySelector('.item[show]');
+                    const next = show.nextElementSibling || hide.children[0];
+                    const back = document.querySelector('.item[back]');
+                    if(back) {
+                        back.removeAttribute('back','');
+                    }
+                    show.removeAttribute('show','');
+                    show.setAttribute('back','');
+                    next.setAttribute('show','');
+                },5000);
+            },false);
+        });
+    };
+</script>
+</html>

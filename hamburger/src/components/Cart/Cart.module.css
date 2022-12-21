@@ -1,0 +1,31 @@
+.basic {
+    width: 700rem;
+    height: 100rem;
+    background-color: rgb(45, 43, 43);
+    border-radius: 50rem;
+    position: absolute;
+    z-index: 10000;
+    left: 25rem;
+    bottom: 20rem;
+}
+.basic .totalPrice,
+.basic .not_Choose {
+    transform: translateY(-36rem);
+    margin-left: 10rem;
+    display: inline-block;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+.basic .totalPrice i {
+    font-size: 30rem;
+}
+.basic .totalPrice span {
+    margin-left:2rem ;
+    font-size: 40rem;
+}
+.basic .not_Choose {
+    font-size: 40rem;
+    margin-left: 20rem;
+    color: gray;
+}

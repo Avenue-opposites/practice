@@ -1,0 +1,36 @@
+.basic {
+    position: absolute;
+    bottom: 0;
+    width: 750rem;
+    height: 80vh;
+    background-color: white;
+    border-radius: 50rem 50rem 0 0;
+}
+.basic .bar {
+    margin: 40rem 40rem 0 40rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.basic .bar h2 {
+    font-size: 40rem;
+}
+.basic .bar button {
+    font-size: 30rem;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
+.basic .bar button i {
+    display: inline-block;
+    width: 50rem;
+    height: 50rem;
+    background: url(../../../assets/image/bin.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.basic .list {
+    overflow: auto;
+    height: 1100rem;
+}

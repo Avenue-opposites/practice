@@ -1,0 +1,10 @@
+.basic {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 80vh;
+}
+.basic .fallback {
+    margin-top: 50%;
+    color: gray;
+    text-align: center;
+}

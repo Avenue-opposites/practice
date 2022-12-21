@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片对比</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 600px;
+            height: 400px; 
+            position: relative;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, .15);
+            border-radius: 4px;
+        }
+        .container::before {
+            filter: grayscale(100%);
+        }
+        .container::after {
+            clip-path: inset(0 0 0 calc(var(--slide)  * 1% / 10));
+        }
+        .container::before,
+        .container::after {
+            content: '';
+            display: block;
+            width: inherit;
+            height: inherit;
+            background-image: url(./wallhaven-k7wor1_1920x1080.png);
+            background-size: cover;
+            background-position: center ;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* transition: all 100ms; */
+
+        }
+        #slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+
+            -webkit-appearance: none;
+            appearance: none;
+            outline: none;
+            margin: 0;
+            background-color: transparent;
+            width: inherit;
+            height: inherit;
+        }
+        #slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 400px;
+            width: 14px;
+            background-color: #000;
+            box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, .5);
+            border-radius: 2px;
+            cursor: ew-resize;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="range" name="" id="slider" min="0" max="1000" value="500" oninput="this.parentNode.style.setProperty('--slide',`${this.value}`)">
+    </div>
+</body>
+</html>

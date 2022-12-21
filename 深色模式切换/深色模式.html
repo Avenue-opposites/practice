@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --button-width:100px;
+            --button-height:40px;
+            --margin:calc((var(--button-height) - var(--yuan-d)) / 2);
+            --yuan-d:30px;
+            --yuan-shadow:2px;
+            --toggle-width:40px;
+            --color-gray:#e9e9ea;
+            --color-green:#30d158;
+        }
+        body {
+            background-color: #fff;
+            transition: .3s ease-in-out;
+            color: #000;
+        }
+        .nav {
+            height: 60px;
+            width: 100vw;
+            background-color:#d4d4d4 ;
+            position: relative;
+        }
+        span {
+            transition: .3s ease-in-out;
+            position: absolute;
+            right: 0;
+            margin: 10px;
+            display: inline-block;
+            width: var(--button-width);
+            height: var(--button-height);
+            background-color: var(--color-gray);
+            border-radius: calc(var(--button-height) / 2);
+
+        }
+        span::before {
+            content: '';
+            transition: .3s ease-in-out;
+            position: absolute;
+            display: inline-block;
+            width: var(--yuan-d);
+            height: var(--yuan-d);
+            background-color: #fff;
+            border-radius: 50%;
+            top: var(--margin);
+            transform: translateX(var(--margin));
+            box-shadow: var(--yuan-shadow) 0 calc(var(--yuan-shadow) * 4) 0 rgba(0, 0, 0, 0.1);
+        }
+        input[type="checkbox"]:checked + span {
+            background-color: var(--color-green);
+        }
+        input[type="checkbox"]:checked + span::before {
+            transform: translateX(calc(var(--button-width) - var(--yuan-d) - var(--margin)));
+            box-shadow: calc(var(--yuan-shadow) * -1) 0 calc(var(--yuan-shadow) * 4) 0 rgba(0, 0, 0, 0.1);
+        }
+        input[type="checkbox"] {
+            display: none;
+        }
+        input[type="checkbox"]:active + span::before {
+            width: var(--toggle-width);
+            border-radius: calc(var(--button-height) / 2);
+        }
+        input[type="checkbox"]:active:checked + span::before {
+            width: var(--toggle-width);
+            border-radius: calc(var(--button-height) / 2);
+            transform: translateX(calc(var(--button-width) - var(--yuan-d) - var(--margin) - 10px));
+        }
+        p {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 20em;
+            font-weight: 300;
+            transition: .3s ease-in-out;
+            animation-timing-function: ease-in-out;
+            font-family: 'Courier New', Courier, monospace;
+            /* animation: d 0.3s ; */
+        }
+        @keyframes d {
+            80% {
+                transform: scale(5);
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <label for="toggle">
+            <input type="checkbox" name="toggle" id="toggle">
+            <span></span>
+        </label>
+    </div>
+    <p>Normal</p>
+</body>
+<script>
+    const btn = document.getElementById("toggle");
+    const nav = document.getElementsByClassName("nav")[0];
+    const p = document.getElementsByTagName("p")[0];
+    btn.addEventListener('click',() => {
+        p.style.animation = "d 0.3s";
+        setTimeout(() => {
+            p.style.animation = "none";
+        },500);
+        if(btn.checked) {
+            p.innerHTML = "Dark";
+            document.body.style.color = "#fff";
+            document.body.style.background = "#1c1c1e";
+            nav.style.background = "rgb(83, 82, 82)";
+        }else {
+            p.innerHTML = "Normal";
+            document.body.style.color = "#000";
+            document.body.style.background = "#fff";
+            nav.style.background = "#d4d4d4";
+        }
+
+    });
+</script>
+</html>

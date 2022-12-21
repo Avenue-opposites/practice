@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --body:#48bfe3;
+        }
+        
+        .container {
+            position: relative;
+        }
+        .container h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 72px;
+            letter-spacing: -0.012em;
+            width: 290px;
+            font-weight: normal;
+            position:relative;
+            /* z-index: 99; */
+            left: 50%;
+            position: sticky;
+            top: -1px;
+            margin: 100px 0;
+            transform:scale(clamp(0.15,var(--scale),1));
+            transform-origin: 0% 0%;
+            /* transition: all 0.3s ease-in; */
+        }
+        .imga {
+            overflow: hidden;
+            position: relative;
+            background-color: #fff;
+        }
+        .imga img {
+            display: block;
+            max-width: 100%;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translateX(calc(-50% - 30px));
+        }
+        .pinned {
+            color: rgb(33, 194, 194);
+            transition: all 0.3s ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="--scale:1">
+            仅仅
+            11.5毫米
+            就是
+            这么
+            薄
+        </h1>
+        <div class="imga">
+            <img src="\图片库\《阴阳师》手游官网_网易和风匠心巨制，开启唯美奇幻之旅\苹果iMac.jpg" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = main();
+    function main() {
+        let isPinned = true;
+        const h1 = document.querySelector('h1');
+        const options = {
+            threshold:1
+        };
+        const Observer = new IntersectionObserver(handler,options);
+        Observer.observe(h1);
+        function handler([e]) {
+            // console.log(e);
+            // e.intersectionRatio = 0.5;
+            e.target.classList.toggle('pinned',(e.intersectionRatio < 1));
+        }
+        document.addEventListener('scroll',(e) => {
+            if(isPinned) {
+                let h1Height = parseInt(getComputedStyle(h1).height);
+                let h1Width = parseInt(getComputedStyle(h1).width);
+                let h1MarginTop = parseInt(getComputedStyle(h1).marginTop);
+                let h1WidthBottom = parseInt(getComputedStyle(h1).marginBottom);
+                let scroll = (parseInt(document.documentElement.scrollTop) - h1MarginTop) / h1Height;
+                console.log(scroll);
+                h1.style.setProperty('--scale',(1 - scroll));
+            }
+
+        });
+
+    }
+</script>
+</html>

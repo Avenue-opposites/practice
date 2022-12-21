@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    /* background-color: rgb(238, 120, 120); */
+    height: 100vh;
+}
+
+.container {
+   position: relative;
+   height: 100vh;
+}

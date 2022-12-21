@@ -1,0 +1,37 @@
+.basic {
+    display: inline-block;
+    position: relative;
+    width: 100rem;
+    height: 100rem;
+}
+.basic .img_Box {
+    display: inline-block;
+    position: absolute;
+    bottom: -14rem;
+    width: 100%;
+}
+.basic .img_Box img {
+    width: 100%;
+}
+.basic .totalAmount {
+    transition: opacity .3s linear;
+    padding: 2rem;
+    position: absolute;
+    right: -15rem;
+    top:-15rem;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 30rem;
+    height: 30rem;
+    text-align: center;
+    line-height: 30rem;
+    font-size: 14rem;
+    font-weight: 700;
+}
+.show {
+    opacity: 1;
+}
+.not_Show {
+    opacity: 0;
+}
