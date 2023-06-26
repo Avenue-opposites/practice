@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gird-default</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .gird {
+            display: grid;
+            grid-template-columns: minmax(100px,300px) repeat(4,1fr);
+            grid-template-rows: 1fr repeat(3,minmax(100px,300px)) 2fr;
+            grid-auto-rows: 1fr;
+            background-color: #eee;
+            text-align: center;
+        }
+        .cell {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            color: white;
+            border: 2px solid rgb(32, 236, 80);
+            background-color: rgb(230, 123, 123);
+        }
+        .cell:first-child {
+            font-size: 32px;
+            grid-area: 1 / 1 / 3 / 3;
+        }
+        .cell:nth-child(8) {
+            grid-area: 3 / 2 / span 3;
+        }
+        .cell:nth-last-child(2) {
+            grid-column-start:3 ;
+            background-color: red;
+        }
+        .cell:last-child {
+            font-size: 24px;
+            grid-column: 1 / 6;
+        }
+    </style>
+</head>
+<body>
+    <div class="gird">
+        <div class="cell one">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio qui nulla voluptatem reprehenderit non neque numquam consectetur, ratione dolorum dolor ex? Molestias earum eligendi a ullam temporibus! Commodi, magni exercitationem?
+        </div>
+        <div class="cell">Beatae minus qui esse, sunt vel illum laudantium sequi deserunt expedita dolore est voluptate aperiam nihil dicta error labore porro cum aspernatur ducimus harum nobis vero. Distinctio asperiores omnis sed.</div>
+        <div class="cell">Perferendis facilis a, fugiat neque saepe cupiditate debitis rem praesentium sequi totam veritatis voluptates voluptatibus quia autem, officia eaque nobis sunt eum ratione? Vero error consequatur esse ad quas tenetur!</div>
+        <div class="cell">Eaque officia magnam nostrum nesciunt porro veritatis, provident dolore, corrupti earum voluptatibus quia id fuga vero asperiores cumque minus nemo, aperiam ipsum explicabo. Provident fugiat eaque error veniam, natus voluptate.</div>
+        <div class="cell">Ab, et. Aut, accusantium labore enim adipisci nemo nulla. Soluta perspiciatis non minima ipsa nobis, unde tempore totam ipsam aut cupiditate, rem itaque ducimus. Voluptate atque in eaque sapiente nisi?</div>
+        <div class="cell">Quasi a vero, aliquid rerum magni quas dolor commodi odio placeat fuga eos officia aut deserunt cum, quia tempora velit quod. Nemo possimus inventore tempora nihil. Et eligendi perspiciatis beatae!</div>
+        <div class="cell">Cupiditate suscipit, incidunt debitis molestias ipsa provident officia voluptas. Aspernatur minima laborum odio animi nam eaque, eligendi distinctio exercitationem quibusdam, temporibus optio ut quos ea ad praesentium asperiores magni iure.</div>
+        <div class="cell">Rerum ducimus inventore aperiam molestias placeat, unde atque temporibus velit, expedita molestiae facere repellat magnam fugit. Veniam, minus. Delectus, eveniet culpa! Veniam sunt accusantium nihil consequatur nisi architecto corporis earum!</div>
+        <div class="cell">Esse ut, ex ab id corrupti maiores corporis aspernatur, ipsam quaerat molestias voluptates aliquid iusto ullam et ratione, necessitatibus dolor soluta exercitationem pariatur aliquam rerum? Quas optio aut veritatis perferendis.</div>
+        <div class="cell">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio qui nulla voluptatem reprehenderit non neque numquam consectetur, ratione dolorum dolor ex? Molestias earum eligendi a ullam temporibus! Commodi, magni exercitationem?</div>
+        <div class="cell">Beatae minus qui esse, sunt vel illum laudantium sequi deserunt expedita dolore est voluptate aperiam nihil dicta error labore porro cum aspernatur ducimus harum nobis vero. Distinctio asperiores omnis sed.</div>
+        <div class="cell">Perferendis facilis a, fugiat neque saepe cupiditate debitis rem praesentium sequi totam veritatis voluptates voluptatibus quia autem, officia eaque nobis sunt eum ratione? Vero error consequatur esse ad quas tenetur!</div>
+        <div class="cell">Eaque officia magnam nostrum nesciunt porro veritatis, provident dolore, corrupti earum voluptatibus quia id fuga vero asperiores cumque minus nemo, aperiam ipsum explicabo. Provident fugiat eaque error veniam, natus voluptate.</div>
+        <div class="cell">Ab, et. Aut, accusantium labore enim adipisci nemo nulla. Soluta perspiciatis non minima ipsa nobis, unde tempore totam ipsam aut cupiditate, rem itaque ducimus. Voluptate atque in eaque sapiente nisi?</div>
+        <div class="cell">Quasi a vero, aliquid rerum magni quas dolor commodi odio placeat fuga eos officia aut deserunt cum, quia tempora velit quod. Nemo possimus inventore tempora nihil. Et eligendi perspiciatis beatae!</div>
+        <div class="cell">Cupiditate suscipit, incidunt debitis molestias ipsa provident officia voluptas. Aspernatur minima laborum odio animi nam eaque, eligendi distinctio exercitationem quibusdam, temporibus optio ut quos ea ad praesentium asperiores magni iure.</div>
+        <div class="cell">Rerum ducimus inventore aperiam molestias placeat, unde atque temporibus velit, expedita molestiae facere repellat magnam fugit. Veniam, minus. Delectus, eveniet culpa! Veniam sunt accusantium nihil consequatur nisi architecto corporis earum!</div>
+        <div class="cell">Esse ut, ex ab id corrupti maiores corporis aspernatur, ipsam quaerat molestias voluptates aliquid iusto ullam et ratione, necessitatibus dolor soluta exercitationem pariatur aliquam rerum? Quas optio aut veritatis perferendis.</div>
+        <div class="cell">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio qui nulla voluptatem reprehenderit non neque numquam consectetur, ratione dolorum dolor ex? Molestias earum eligendi a ullam temporibus! Commodi, magni exercitationem?</div>
+        <div class="cell">Beatae minus qui esse, sunt vel illum laudantium sequi deserunt expedita dolore est voluptate aperiam nihil dicta error labore porro cum aspernatur ducimus harum nobis vero. Distinctio asperiores omnis sed.</div>
+        <div class="cell">Perferendis facilis a, fugiat neque saepe cupiditate debitis rem praesentium sequi totam veritatis voluptates voluptatibus quia autem, officia eaque nobis sunt eum ratione? Vero error consequatur esse ad quas tenetur!</div>
+        <div class="cell">Eaque officia magnam nostrum nesciunt porro veritatis, provident dolore, corrupti earum voluptatibus quia id fuga vero asperiores cumque minus nemo, aperiam ipsum explicabo. Provident fugiat eaque error veniam, natus voluptate.</div>
+        <div class="cell">Ab, et. Aut, accusantium labore enim adipisci nemo nulla. Soluta perspiciatis non minima ipsa nobis, unde tempore totam ipsam aut cupiditate, rem itaque ducimus. Voluptate atque in eaque sapiente nisi?</div>
+        <div class="cell">Quasi a vero, aliquid rerum magni quas dolor commodi odio placeat fuga eos officia aut deserunt cum, quia tempora velit quod. Nemo possimus inventore tempora nihil. Et eligendi perspiciatis beatae!</div>
+        <div class="cell">Cupiditate suscipit, incidunt debitis molestias ipsa provident officia voluptas. Aspernatur minima laborum odio animi nam eaque, eligendi distinctio exercitationem quibusdam, temporibus optio ut quos ea ad praesentium asperiores magni iure.</div>
+        <div class="cell">Rerum ducimus inventore aperiam molestias placeat, unde atque temporibus velit, expedita molestiae facere repellat magnam fugit. Veniam, minus. Delectus, eveniet culpa! Veniam sunt accusantium nihil consequatur nisi architecto corporis earum!</div>
+        <div class="cell">Esse ut, ex ab id corrupti maiores corporis aspernatur, ipsam quaerat molestias voluptates aliquid iusto ullam et ratione, necessitatibus dolor soluta exercitationem pariatur aliquam rerum? Quas optio aut veritatis perferendis.</div>
+    </div>
+</body>
+</html>

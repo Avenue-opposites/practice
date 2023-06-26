@@ -108,9 +108,12 @@
   </body>
   <script>
     setInterval(function () {
+      //保存当前显示的元素
       const show = document.querySelector("span[show]");
+      //获取当前显示的下一个元素
       const next =
         show.nextElementSibling || document.querySelectorAll('span')[0];
+      //获取上一个元素
       const up = document.querySelector("span[up]");
       if(up) {
         up.removeAttribute('up','');
@@ -119,6 +122,5 @@
       show.removeAttribute('show','');
       next.setAttribute('show','');
     }, 2000);
-    console.log();
   </script>
 </html>
