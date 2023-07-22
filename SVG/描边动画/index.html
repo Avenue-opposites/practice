@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg描边动画</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+      <svg class="icon">
+        <circle style="--delay: .5s" class="animate" cx="50%" cy="50%" r="100">
+        </circle>
+        <line style="--delay: 0s" class="animate" x1="20" y1="20" x2="100%" y2="20" />
+      </svg>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
